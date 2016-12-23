@@ -1,0 +1,505 @@
+{
+  "paragraphs": [
+    {
+      "text": "%pyspark\ndata\u003dsc.textFile(\u0027/bigdata/OP_DTL_GNRL_PGYR2015_P06302016.csv\u0027)\ndata.count()\n",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:18:30 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481774521544_-1226199155",
+      "id": "20161215-040201_1416527236",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "11132001\n"
+      },
+      "dateCreated": "Dec 15, 2016 4:02:01 AM",
+      "dateStarted": "Dec 23, 2016 1:18:30 AM",
+      "dateFinished": "Dec 23, 2016 1:18:53 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\ndata.take(1)",
+      "user": "anonymous",
+      "dateUpdated": "Dec 15, 2016 4:06:00 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481774728761_133809941",
+      "id": "20161215-040528_231295988",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[\u0027Change_Type,Covered_Recipient_Type,Teaching_Hospital_CCN,Teaching_Hospital_ID,Teaching_Hospital_Name,Physician_Profile_ID,Physician_First_Name,Physician_Middle_Name,Physician_Last_Name,Physician_Name_Suffix,Recipient_Primary_Business_Street_Address_Line1,Recipient_Primary_Business_Street_Address_Line2,Recipient_City,Recipient_State,Recipient_Zip_Code,Recipient_Country,Recipient_Province,Recipient_Postal_Code,Physician_Primary_Type,Physician_Specialty,Physician_License_State_code1,Physician_License_State_code2,Physician_License_State_code3,Physician_License_State_code4,Physician_License_State_code5,Submitting_Applicable_Manufacturer_or_Applicable_GPO_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_ID,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Name,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_State,Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Country,Total_Amount_of_Payment_USDollars,Date_of_Payment,Number_of_Payments_Included_in_Total_Amount,Form_of_Payment_or_Transfer_of_Value,Nature_of_Payment_or_Transfer_of_Value,City_of_Travel,State_of_Travel,Country_of_Travel,Physician_Ownership_Indicator,Third_Party_Payment_Recipient_Indicator,Name_of_Third_Party_Entity_Receiving_Payment_or_Transfer_of_Value,Charity_Indicator,Third_Party_Equals_Covered_Recipient_Indicator,Contextual_Information,Delay_in_Publication_Indicator,Record_ID,Dispute_Status_for_Publication,Product_Indicator,Name_of_Associated_Covered_Drug_or_Biological1,Name_of_Associated_Covered_Drug_or_Biological2,Name_of_Associated_Covered_Drug_or_Biological3,Name_of_Associated_Covered_Drug_or_Biological4,Name_of_Associated_Covered_Drug_or_Biological5,NDC_of_Associated_Covered_Drug_or_Biological1,NDC_of_Associated_Covered_Drug_or_Biological2,NDC_of_Associated_Covered_Drug_or_Biological3,NDC_of_Associated_Covered_Drug_or_Biological4,NDC_of_Associated_Covered_Drug_or_Biological5,Name_of_Associated_Covered_Device_or_Medical_Supply1,Name_of_Associated_Covered_Device_or_Medical_Supply2,Name_of_Associated_Covered_Device_or_Medical_Supply3,Name_of_Associated_Covered_Device_or_Medical_Supply4,Name_of_Associated_Covered_Device_or_Medical_Supply5,Program_Year,Payment_Publication_Date\u0027]\n"
+      },
+      "dateCreated": "Dec 15, 2016 4:05:28 AM",
+      "dateStarted": "Dec 15, 2016 4:06:05 AM",
+      "dateFinished": "Dec 15, 2016 4:06:05 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nrdd \u003d data.map(lambda line: line.split(\",\"))\nrdd.take(1).count()\n",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:24:59 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481774760428_1116889353",
+      "id": "20161215-040600_1572076573",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[[\u0027Change_Type\u0027, \u0027Covered_Recipient_Type\u0027, \u0027Teaching_Hospital_CCN\u0027, \u0027Teaching_Hospital_ID\u0027, \u0027Teaching_Hospital_Name\u0027, \u0027Physician_Profile_ID\u0027, \u0027Physician_First_Name\u0027, \u0027Physician_Middle_Name\u0027, \u0027Physician_Last_Name\u0027, \u0027Physician_Name_Suffix\u0027, \u0027Recipient_Primary_Business_Street_Address_Line1\u0027, \u0027Recipient_Primary_Business_Street_Address_Line2\u0027, \u0027Recipient_City\u0027, \u0027Recipient_State\u0027, \u0027Recipient_Zip_Code\u0027, \u0027Recipient_Country\u0027, \u0027Recipient_Province\u0027, \u0027Recipient_Postal_Code\u0027, \u0027Physician_Primary_Type\u0027, \u0027Physician_Specialty\u0027, \u0027Physician_License_State_code1\u0027, \u0027Physician_License_State_code2\u0027, \u0027Physician_License_State_code3\u0027, \u0027Physician_License_State_code4\u0027, \u0027Physician_License_State_code5\u0027, \u0027Submitting_Applicable_Manufacturer_or_Applicable_GPO_Name\u0027, \u0027Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_ID\u0027, \u0027Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Name\u0027, \u0027Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_State\u0027, \u0027Applicable_Manufacturer_or_Applicable_GPO_Making_Payment_Country\u0027, \u0027Total_Amount_of_Payment_USDollars\u0027, \u0027Date_of_Payment\u0027, \u0027Number_of_Payments_Included_in_Total_Amount\u0027, \u0027Form_of_Payment_or_Transfer_of_Value\u0027, \u0027Nature_of_Payment_or_Transfer_of_Value\u0027, \u0027City_of_Travel\u0027, \u0027State_of_Travel\u0027, \u0027Country_of_Travel\u0027, \u0027Physician_Ownership_Indicator\u0027, \u0027Third_Party_Payment_Recipient_Indicator\u0027, \u0027Name_of_Third_Party_Entity_Receiving_Payment_or_Transfer_of_Value\u0027, \u0027Charity_Indicator\u0027, \u0027Third_Party_Equals_Covered_Recipient_Indicator\u0027, \u0027Contextual_Information\u0027, \u0027Delay_in_Publication_Indicator\u0027, \u0027Record_ID\u0027, \u0027Dispute_Status_for_Publication\u0027, \u0027Product_Indicator\u0027, \u0027Name_of_Associated_Covered_Drug_or_Biological1\u0027, \u0027Name_of_Associated_Covered_Drug_or_Biological2\u0027, \u0027Name_of_Associated_Covered_Drug_or_Biological3\u0027, \u0027Name_of_Associated_Covered_Drug_or_Biological4\u0027, \u0027Name_of_Associated_Covered_Drug_or_Biological5\u0027, \u0027NDC_of_Associated_Covered_Drug_or_Biological1\u0027, \u0027NDC_of_Associated_Covered_Drug_or_Biological2\u0027, \u0027NDC_of_Associated_Covered_Drug_or_Biological3\u0027, \u0027NDC_of_Associated_Covered_Drug_or_Biological4\u0027, \u0027NDC_of_Associated_Covered_Drug_or_Biological5\u0027, \u0027Name_of_Associated_Covered_Device_or_Medical_Supply1\u0027, \u0027Name_of_Associated_Covered_Device_or_Medical_Supply2\u0027, \u0027Name_of_Associated_Covered_Device_or_Medical_Supply3\u0027, \u0027Name_of_Associated_Covered_Device_or_Medical_Supply4\u0027, \u0027Name_of_Associated_Covered_Device_or_Medical_Supply5\u0027, \u0027Program_Year\u0027, \u0027Payment_Publication_Date\u0027]]\n"
+      },
+      "dateCreated": "Dec 15, 2016 4:06:00 AM",
+      "dateStarted": "Dec 23, 2016 1:22:32 AM",
+      "dateFinished": "Dec 23, 2016 1:22:32 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nheader\u003drdd.first()\nrdd \u003d rdd.filter(lambda line:line !\u003d header)",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:22:49 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481774813248_-279102250",
+      "id": "20161215-040653_1233888737",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Dec 15, 2016 4:06:53 AM",
+      "dateStarted": "Dec 23, 2016 1:22:49 AM",
+      "dateFinished": "Dec 23, 2016 1:22:49 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nrdd.take(2)",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:22:52 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481774906230_-1017111937",
+      "id": "20161215-040826_1293341529",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[[\u0027\"NEW\"\u0027, \u0027\"Covered Recipient Physician\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"545007\"\u0027, \u0027\"MICHAEL\"\u0027, \u0027\u0027, \u0027\"HOWELL\"\u0027, \u0027\u0027, \u0027\"17815 W 160TH ST\"\u0027, \u0027\u0027, \u0027\"OLATHE\"\u0027, \u0027\"KS\"\u0027, \u0027\"66062\"\u0027, \u0027\"United States\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\"Doctor of Dentistry\"\u0027, \u0027\u0027, \u0027\"KS\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"National Dentex Corporation\"\u0027, \u0027\"100000000065\"\u0027, \u0027\"National Dentex Corporation\"\u0027, \u0027\"FL\"\u0027, \u0027\"United States\"\u0027, \u002740.00\u0027, \u0027\"12/14/2015\"\u0027, \u0027\"1\"\u0027, \u0027\"Cash or cash equivalent\"\u0027, \u0027\"Gift\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"No\"\u0027, \u0027\"No Third Party Payment\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"No\"\u0027, \u0027\"234979872\"\u0027, \u0027\"No\"\u0027, \u0027\"Covered\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"IMPLANTABLE ABUTMENTS\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"2015\"\u0027, \u0027\"06/30/2016\"\u0027], [\u0027\"NEW\"\u0027, \u0027\"Covered Recipient Physician\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"1107042\"\u0027, \u0027\"CRAIG\"\u0027, \u0027\u0027, \u0027\"ALEXANDER\"\u0027, \u0027\u0027, \u0027\"450 S PARKER ST\"\u0027, \u0027\u0027, \u0027\"OLATHE\"\u0027, \u0027\"KS\"\u0027, \u0027\"66061\"\u0027, \u0027\"United States\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\"Doctor of Dentistry\"\u0027, \u0027\u0027, \u0027\"KS\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"National Dentex Corporation\"\u0027, \u0027\"100000000065\"\u0027, \u0027\"National Dentex Corporation\"\u0027, \u0027\"FL\"\u0027, \u0027\"United States\"\u0027, \u002740.00\u0027, \u0027\"12/14/2015\"\u0027, \u0027\"1\"\u0027, \u0027\"Cash or cash equivalent\"\u0027, \u0027\"Gift\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"No\"\u0027, \u0027\"No Third Party Payment\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"No\"\u0027, \u0027\"234979876\"\u0027, \u0027\"No\"\u0027, \u0027\"Covered\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"IMPLANTABLE ABUTMENTS\u0027, \u0027 CLEAR DREAM\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"2015\"\u0027, \u0027\"06/30/2016\"\u0027]]\n"
+      },
+      "dateCreated": "Dec 15, 2016 4:08:26 AM",
+      "dateStarted": "Dec 23, 2016 1:22:52 AM",
+      "dateFinished": "Dec 23, 2016 1:22:52 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nrdd_DF\u003drdd.toDF()",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:22:56 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481774914360_148307806",
+      "id": "20161215-040834_2142399522",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Dec 15, 2016 4:08:34 AM",
+      "dateStarted": "Dec 23, 2016 1:22:56 AM",
+      "dateFinished": "Dec 23, 2016 1:22:58 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nrdd.take(2)",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:23:24 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481775054758_-22738533",
+      "id": "20161215-041054_490360061",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[[\u0027\"NEW\"\u0027, \u0027\"Covered Recipient Physician\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"545007\"\u0027, \u0027\"MICHAEL\"\u0027, \u0027\u0027, \u0027\"HOWELL\"\u0027, \u0027\u0027, \u0027\"17815 W 160TH ST\"\u0027, \u0027\u0027, \u0027\"OLATHE\"\u0027, \u0027\"KS\"\u0027, \u0027\"66062\"\u0027, \u0027\"United States\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\"Doctor of Dentistry\"\u0027, \u0027\u0027, \u0027\"KS\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"National Dentex Corporation\"\u0027, \u0027\"100000000065\"\u0027, \u0027\"National Dentex Corporation\"\u0027, \u0027\"FL\"\u0027, \u0027\"United States\"\u0027, \u002740.00\u0027, \u0027\"12/14/2015\"\u0027, \u0027\"1\"\u0027, \u0027\"Cash or cash equivalent\"\u0027, \u0027\"Gift\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"No\"\u0027, \u0027\"No Third Party Payment\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"No\"\u0027, \u0027\"234979872\"\u0027, \u0027\"No\"\u0027, \u0027\"Covered\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"IMPLANTABLE ABUTMENTS\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"2015\"\u0027, \u0027\"06/30/2016\"\u0027], [\u0027\"NEW\"\u0027, \u0027\"Covered Recipient Physician\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"1107042\"\u0027, \u0027\"CRAIG\"\u0027, \u0027\u0027, \u0027\"ALEXANDER\"\u0027, \u0027\u0027, \u0027\"450 S PARKER ST\"\u0027, \u0027\u0027, \u0027\"OLATHE\"\u0027, \u0027\"KS\"\u0027, \u0027\"66061\"\u0027, \u0027\"United States\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\"Doctor of Dentistry\"\u0027, \u0027\u0027, \u0027\"KS\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"National Dentex Corporation\"\u0027, \u0027\"100000000065\"\u0027, \u0027\"National Dentex Corporation\"\u0027, \u0027\"FL\"\u0027, \u0027\"United States\"\u0027, \u002740.00\u0027, \u0027\"12/14/2015\"\u0027, \u0027\"1\"\u0027, \u0027\"Cash or cash equivalent\"\u0027, \u0027\"Gift\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"No\"\u0027, \u0027\"No Third Party Payment\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"No\"\u0027, \u0027\"234979876\"\u0027, \u0027\"No\"\u0027, \u0027\"Covered\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"IMPLANTABLE ABUTMENTS\u0027, \u0027 CLEAR DREAM\"\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\u0027, \u0027\"2015\"\u0027, \u0027\"06/30/2016\"\u0027]]\n"
+      },
+      "dateCreated": "Dec 15, 2016 4:10:54 AM",
+      "dateStarted": "Dec 23, 2016 1:23:25 AM",
+      "dateFinished": "Dec 23, 2016 1:23:25 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nrdd.count()",
+      "user": "anonymous",
+      "dateUpdated": "Dec 15, 2016 4:16:59 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481775063310_-659266456",
+      "id": "20161215-041103_1400083330",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "11132000\n"
+      },
+      "dateCreated": "Dec 15, 2016 4:11:03 AM",
+      "dateStarted": "Dec 15, 2016 4:16:59 AM",
+      "dateFinished": "Dec 15, 2016 4:17:29 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nrdd_new\u003drdd.map(lambda l: (l[0:40]))\n\nrdd_df\u003drdd_new.toDF()\nrdd_df.show(100)\n",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:25:02 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481775419747_1106080279",
+      "id": "20161215-041659_138302755",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+-----+--------------------+---+---+---+---------+-----------+---+------------+---+--------------------+---+-------------------+----+-------+---------------+---+---+--------------------+--------------------+----+---+---+---+---+--------------------+--------------+--------------------+----+---------------+-----+------------+---+--------------------+--------------------+--------------+----+---------------+-----+--------------------+\n|   _1|                  _2| _3| _4| _5|       _6|         _7| _8|          _9|_10|                 _11|_12|                _13| _14|    _15|            _16|_17|_18|                 _19|                 _20| _21|_22|_23|_24|_25|                 _26|           _27|                 _28| _29|            _30|  _31|         _32|_33|                 _34|                 _35|           _36| _37|            _38|  _39|                 _40|\n+-----+--------------------+---+---+---+---------+-----------+---+------------+---+--------------------+---+-------------------+----+-------+---------------+---+---+--------------------+--------------------+----+---+---+---+---+--------------------+--------------+--------------------+----+---------------+-----+------------+---+--------------------+--------------------+--------------+----+---------------+-----+--------------------+\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"545007\"|  \"MICHAEL\"|   |    \"HOWELL\"|   |  \"17815 W 160TH ST\"|   |           \"OLATHE\"|\"KS\"|\"66062\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"KS\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1107042\"|    \"CRAIG\"|   | \"ALEXANDER\"|   |   \"450 S PARKER ST\"|   |           \"OLATHE\"|\"KS\"|\"66061\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"KS\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"395631\"|   \"PAMELA\"|   |\"RICHARDSON\"|   |\"9500 E 63RD ST S...|   |          \"RAYTOWN\"|\"MO\"|\"64133\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"MO\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|20.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"734368\"| \"RUBELITA\"|   |     \"JAMES\"|   |\"9500 E 63RD ST S...|   |          \"RAYTOWN\"|\"MO\"|\"64133\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"MO\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|20.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"286853\"|   \"ROBERT\"|   |    \"NELSON\"|   |\"13018 STATE LINE...|   |          \"LEAWOOD\"|\"KS\"|\"66209\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"KS\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"324768\"|   \"RONALD\"|   | \"BURGMEIER\"|   |\"13025 S MUR LEN ...|   |           \"OLATHE\"|\"KS\"|\"66062\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"KS\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"816475\"|     \"RYAN\"|   |    \"BUNTON\"|   |\"11909 W 87TH STR...|   |           \"LENEXA\"|\"KS\"|\"66215\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"KS\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"826390\"|     \"RYAN\"|   |\"LEHMKUHLER\"|   |\"100 W ROSS BLVD ...|   |       \"DODGE CITY\"|\"KS\"|\"67801\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"KS\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |  \"93996\"|    \"TRENT\"|   |    \"CRAVEN\"|   |\"1345 N JESSE JAM...|   |\"EXCELSIOR SPRINGS\"|\"KS\"|\"64024\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"MO\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|20.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1085749\"|   \"STEVEN\"|   |  \"VODONICK\"|   |    \"5638 NIEMAN RD\"|   |          \"SHAWNEE\"|\"KS\"|\"66203\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"KS\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"410967\"|     \"TARA\"|   |     \"BOYLE\"|   |\"10101 WOODLAND D...|   |           \"LENEXA\"|\"KS\"|\"66220\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"KS\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"644808\"|   \"ROBERT\"|   |      \"LONG\"|   |\"11111 NALL AVE S...|   |          \"LEAWOOD\"|\"KS\"|\"66211\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"KS\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1148749\"|   \"THOMAS\"|   |    \"JORDAN\"|   |\"346 FORT ZUMWALT...|   |          \"OFALLON\"|\"MO\"|\"63366\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"MO\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"974395\"|   \"THOMAS\"|   |   \"KOZICKI\"|   |\"5950 N OAK TRFY ...|   |        \"GLADSTONE\"|\"MO\"|\"64118\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"MO\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1232885\"|   \"TREVOR\"|   |   \"CLEMONS\"|   |\"13051 S US HIGHW...|   |        \"GRANDVIEW\"|\"MO\"|\"64030\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"MO\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.00|\"12/14/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"604240\"|     \"GARY\"|   |  \"AGLIETTI\"|   |\"501 SOUTH DIVISI...|   |      \"CARSON CITY\"|\"NV\"|\"89703\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |  \"61823\"|  \"RAYMOND\"|   |    \"HOLMES\"|   |\"1855 TANNER WAY ...|   |         \"HARRIMAN\"|\"TN\"|\"37748\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|14.00|\"11/23/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"338883\"|   \"DONALD\"|   |     \"HOOIE\"|   |     \"788 S MAIN ST\"|   |       \"CROSSVILLE\"|\"TN\"|\"38555\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|70.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"525797\"|  \"RUSSELL\"|   |     \"HULSE\"|   |\"1203 OLD N KENTU...|   |         \"KINGSTON\"|\"TN\"|\"37763\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"158473\"|   \"ROBERT\"|   |     \"KELSO\"|   |\"6311 KINGSTON PI...|   |        \"KNOXVILLE\"|\"TN\"|\"37919\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|14.00|\"11/23/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"319547\"|  \"PATRICK\"|   |   \"KENNEDY\"|   |   \"2529 W EMORY RD\"|   |           \"POWELL\"|\"TN\"|\"37849\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |  \"99164\"|  \"BENNETT\"|   |     \"KIZER\"|   |\"6001 WALDEN DR S...|   |        \"KNOXVILLE\"|\"TN\"|\"37919\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.28|\"03/18/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"274604\"|     \"TODD\"|   |     \"KLEIN\"|   |\"7714 CONNOR RD S...|   |            \"ALCOA\"|\"TN\"|\"37849\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"131061\"|    \"JAMES\"|   | \"KOTSIANAS\"|   |  \"909 BATHHURST RD\"|   |        \"KNOXVILLE\"|\"TN\"|\"37909\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|14.19|\"01/15/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"131061\"|    \"JAMES\"|   | \"KOTSIANAS\"|   |  \"909 BATHHURST RD\"|   |        \"KNOXVILLE\"|\"TN\"|\"37909\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"143305\"|    \"DAVID\"|   |   \"LAMBERT\"|   |      \"805 GROVE ST\"|   |           \"LOUDON\"|\"TN\"|\"37774\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|70.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"386471\"|     \"CARL\"|   |     \"MABRY\"|   | \"603 HIGHWAY 321 N\"|   |      \"LENOIR CITY\"|\"TN\"|\"37771\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"386471\"|     \"CARL\"|   |     \"MABRY\"|   | \"603 HIGHWAY 321 N\"|   |      \"LENOIR CITY\"|\"TN\"|\"37771\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|70.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"417198\"|    \"JIMMY\"|   |     \"MILAN\"|   | \"4337 BALL CAMP PK\"|   |        \"KNOXVILLE\"|\"TN\"|\"37921\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |   \"7947\"|  \"CHRISTY\"|   |     \"MOORE\"|   |        \"PO BOX 480\"|   |       \"SWEETWATER\"|\"TN\"|\"37874\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |   \"7947\"|  \"CHRISTY\"|   |     \"MOORE\"|   |        \"PO BOX 480\"|   |       \"SWEETWATER\"|\"TN\"|\"37874\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"116239\"|    \"ALLEN\"|   |     \"MYERS\"|   |\"8703 E BRAINERD RD\"|   |      \"CHATTANOOGA\"|\"TN\"|\"37421\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|14.00|\"11/23/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|21.00|\"03/03/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|    \"NEW YORK\"|\"NY\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|21.18|\"11/10/2015\"|\"1\"|\"Cash or cash equ...|\"Current or prosp...|              |    |               |\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|22.00|\"03/27/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|  \"HACKENSACK\"|\"NJ\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|24.99|\"11/14/2015\"|\"1\"|\"Cash or cash equ...|\"Current or prosp...|              |    |               |\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"570530\"|    \"Allan\"|   |    \"Currie\"|   |   \"1900 River Dr N\"|   |      \"Great Falls\"|\"MT\"|\"59401\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"MT\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.00|\"03/27/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.00|\"01/13/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|   \"Ann Arbor\"|\"MI\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.00|\"01/15/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|   \"Ann Arbor\"|\"MI\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.00|\"02/25/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|     \"Chicago\"|\"IL\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.00|\"02/17/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|    \"NEW YORK\"|\"NY\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.00|\"04/15/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|    \"NEW YORK\"|\"NY\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.00|\"07/30/2015\"|\"1\"|\"Cash or cash equ...|\"Current or prosp...|              |    |               |\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.06|\"02/11/2015\"|\"1\"|\"Cash or cash equ...|\"Current or prosp...|              |    |               |\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"604240\"|     \"GARY\"|   |  \"AGLIETTI\"|   |\"501 SOUTH DIVISI...|   |      \"CARSON CITY\"|\"NV\"|\"89703\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 7.11|\"11/12/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"352501\"|      \"IAN\"|   |     \"AIRES\"|   |\"4130 LA JOLLA VI...|   |         \"LA JOLLA\"|\"CA\"|\"92037\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"CA\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 8.08|\"01/22/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"352501\"|      \"IAN\"|   |     \"AIRES\"|   |\"4130 LA JOLLA VI...|   |         \"LA JOLLA\"|\"CA\"|\"92037\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"CA\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|40.79|\"10/21/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1248643\"|     \"GARY\"|   |  \"ANDERSON\"|   |\"1625 HIGHWAY 88 ...|   |           \"MINDEN\"|\"NV\"|\"89423\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 8.29|\"02/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1168051\"|     \"JOHN\"|   |   \"ARAMINI\"|   |\"1620 LAKESIDE DR...|   |             \"RENO\"|\"NV\"|\"89509\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1168051\"|     \"JOHN\"|   |   \"ARAMINI\"|   |\"1620 LAKESIDE DR...|   |             \"RENO\"|\"NV\"|\"89509\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 9.77|\"04/16/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1272071\"|     \"ALEX\"|   |\"AVANESSIAN\"|   |\"7334 GIRARD AVE ...|   |         \"LA JOLLA\"|\"CA\"|\"92037\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"CA\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|17.25|\"07/13/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |  \"82894\"|     \"JOEL\"|   |    \"BERGER\"|   |\"8008 FROST ST # ...|   |        \"SAN DIEGO\"|\"CA\"|\"92123\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"CA\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|12.66|\"10/21/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"550091\"|     \"ALAN\"|   |     \"BILLS\"|   |\"748 S MEADOWS PK...|   |             \"RENO\"|\"NV\"|\"89506\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"153809\"|     \"JOHN\"|   |    \"BOCCHI\"|   | \"5465 KIETZKE LANE\"|   |             \"RENO\"|\"NV\"|\"89511\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |  \"35951\"|    \"SCOTT\"|   |    \"BOYDEN\"|   |\"4101 CAUGHLIN SQ...|   |             \"RENO\"|\"NV\"|\"89519\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 9.95|\"09/24/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |  \"35951\"|    \"SCOTT\"|   |    \"BOYDEN\"|   |\"4101 CAUGHLIN SQ...|   |             \"RENO\"|\"NV\"|\"89519\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"871735\"|   \"JOSHUA\"|   |    \"BRANCO\"|   |\"1080 N HILLS BLV...|   |             \"RENO\"|\"NV\"|\"89506\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1027247\"|     \"KURT\"|   |  \"BROCKMAN\"|   |\"6395 S MCCARRAN ...|   |             \"RENO\"|\"NV\"|\"89509\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"338560\"|  \"DOUGLAS\"|   |     \"BUDDE\"|   |\"1799 MOUNT MARIA...|   |        \"LAS VEGAS\"|\"NV\"|\"89106\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 9.77|\"04/16/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"116239\"|    \"ALLEN\"|   |     \"MYERS\"|   |\"8703 E BRAINERD RD\"|   |      \"CHATTANOOGA\"|\"TN\"|\"37421\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"287438\"|     \"PAUL\"|   |   \"NATIONS\"|   |\"9221 MIDDLEBROOK...|   |        \"KNOXVILLE\"|\"TN\"|\"37931\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1197149\"|   \"CONNIE\"|   | \"NICHOLSON\"|   |  \"125 BROWN AVENUE\"|   |       \"CROSSVILLE\"|\"TN\"|\"38555\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|14.00|\"11/23/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"424277\"|   \"ERNEST\"|   |     \"OYLER\"|   |\"121 INTERSTATE D...|   |        \"CLEVELAND\"|\"TN\"|\"37312\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"843547\"|   \"BUCKIE\"|   |   \"PARSONS\"|   | \"3340 N HAMPTON DR\"|   |       \"COOKEVILLE\"|\"TN\"|\"38506\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"963846\"|   \"BUCKIE\"|   |   \"PARSONS\"|   |        \"215 OAK ST\"|   |       \"LIVINGSTON\"|\"TN\"|\"38570\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|70.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |  \"30899\"|     \"LEAH\"|   |   \"PATRICK\"|   |\"320 E COLLEGE ST...|   |          \"DICKSON\"|\"TN\"|\"37055\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"197379\"|  \"MICHAEL\"|   | \"PATTERSON\"|   |\"1450 SAM DAVIS R...|   |           \"SMYRNA\"|\"TN\"|\"37167\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |  \"15240\"|  \"CHARLES\"|   |     \"PESCE\"|   |  \"111 N MEADOWS DR\"|   |           \"ATHENS\"|\"TN\"|\"37303\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |  \"15240\"|  \"CHARLES\"|   |     \"PESCE\"|   |  \"111 N MEADOWS DR\"|   |           \"ATHENS\"|\"TN\"|\"37303\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|14.00|\"11/23/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"992785\"|     \"ERIN\"|   |     \"BROWN\"|   |\"3454 MANOR LN #301\"|   |         \"HOMEWOOD\"|\"AL\"|\"35209\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"AL\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"426979\"|   \"KELLYE\"|   |      \"RICE\"|   |   \"1800 MALLORY LN\"|   |        \"BRENTWOOD\"|\"TN\"|\"37027\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|35.00|\"12/02/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"622530\"|\"ELIZABETH\"|   |   \"ROBBINS\"|   |\"7843  MOUSE CREE...|   |        \"CLEVELAND\"|\"TN\"|\"37312\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"276133\"|    \"MANDY\"|   |   \"SHEARER\"|   |   \"10932 CAMPUS ST\"|   |       \"LOMA LINDA\"|\"CA\"|\"92354\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"620388\"|   \"JOHNNA\"|   |  \"SHOCKLEY\"|   |   \"1340 E EMORY RD\"|   |        \"KNOXVILLE\"|\"TN\"|\"37938\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.30|\"06/03/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"620388\"|   \"JOHNNA\"|   |  \"SHOCKLEY\"|   |   \"1340 E EMORY RD\"|   |        \"KNOXVILLE\"|\"TN\"|\"37938\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"TN\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|15.00|\"10/16/2015\"|\"1\"|\"Cash or cash equ...|              \"Gift\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.28|\"11/04/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|  \"HACKENSACK\"|\"NJ\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|25.77|\"06/03/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|  \"HACKENSACK\"|\"NJ\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|26.00|\"04/29/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|    \"NEW YORK\"|\"NY\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|26.00|\"08/19/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|  \"HACKENSACK\"|\"NJ\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|26.00|\"10/14/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|    \"NEW YORK\"|\"NY\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|26.70|\"10/14/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|  \"HACKENSACK\"|\"NJ\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|27.49|\"08/23/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|      \"ROSLYN\"|\"NY\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|28.23|\"09/25/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|      \"ROSLYN\"|\"NY\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|28.63|\"12/19/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|\"W PALM BEACH\"|\"FL\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|28.90|\"12/09/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|  \"HACKENSACK\"|\"NJ\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|29.49|\"11/17/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|  \"BOCA RATON\"|\"FL\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"885629\"|    \"Allan\"|   |   \"Deutsch\"|   |     \"345 E 80th St\"|   |         \"New York\"|\"NY\"|\"10075\"|\"United States\"|   |   |\"Doctor of Dentis...|\"Dental Providers...|\"NY\"|   |   |   |   |\"ESSENTIAL DENTAL...|\"100000005369\"|\"ESSENTIAL DENTAL...|\"NJ\"|\"United States\"|29.81|\"03/18/2015\"|\"1\"|\"Cash or cash equ...|\"Travel and Lodging\"|  \"HACKENSACK\"|\"NJ\"|\"United States\"|\"Yes\"|            \"Entity\"|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"338560\"|  \"DOUGLAS\"|   |     \"BUDDE\"|   |\"1799 MOUNT MARIA...|   |        \"LAS VEGAS\"|\"NV\"|\"89106\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 7.11|\"11/12/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"338560\"|  \"DOUGLAS\"|   |     \"BUDDE\"|   |\"1799 MOUNT MARIA...|   |        \"LAS VEGAS\"|\"NV\"|\"89106\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 9.95|\"10/05/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"338560\"|  \"DOUGLAS\"|   |     \"BUDDE\"|   |\"1799 MOUNT MARIA...|   |        \"LAS VEGAS\"|\"NV\"|\"89106\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"338560\"|  \"DOUGLAS\"|   |     \"BUDDE\"|   |\"1799 MOUNT MARIA...|   |        \"LAS VEGAS\"|\"NV\"|\"89106\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 8.29|\"06/23/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"136985\"|    \"FRANK\"|   |\"CAFFARATTI\"|   |\"3160 N TRUCKEE L...|   |           \"SPARKS\"|\"NV\"|\"89434\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1107858\"|  \"GREGORY\"|   |    \"CARMAN\"|   |\"1055 S WELLS AVE...|   |             \"RENO\"|\"NV\"|\"89502\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 7.11|\"11/12/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1107858\"|  \"GREGORY\"|   |    \"CARMAN\"|   |\"1055 S WELLS AVE...|   |             \"RENO\"|\"NV\"|\"89502\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1107858\"|  \"GREGORY\"|   |    \"CARMAN\"|   |\"1055 S WELLS AVE...|   |             \"RENO\"|\"NV\"|\"89502\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 7.11|\"09/15/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   |\"1055344\"|   \"SOPHIA\"|   |      \"DANG\"|   |\"4818 SPARKS BLVD...|   |           \"SPARKS\"|\"NV\"|\"89436\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"467064\"|  \"MICHAEL\"|   |    \"DAVIES\"|   |\"2261 PYRAMID WAY...|   |           \"SPARKS\"|\"NV\"|\"89431\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"607256\"|  \"MICHAEL\"|   |       \"DAY\"|   |\"2261 PYRAMID WAY...|   |           \"SPARKS\"|\"NV\"|\"89431\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 9.95|\"09/24/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"607256\"|  \"MICHAEL\"|   |       \"DAY\"|   |\"2261 PYRAMID WAY...|   |           \"SPARKS\"|\"NV\"|\"89431\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"| 8.29|\"10/20/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n|\"NEW\"|\"Covered Recipien...|   |   |   | \"607256\"|  \"MICHAEL\"|   |       \"DAY\"|   |\"2261 PYRAMID WAY...|   |           \"SPARKS\"|\"NV\"|\"89431\"|\"United States\"|   |   |\"Doctor of Dentis...|                    |\"NV\"|   |   |   |   |\"National Dentex ...|\"100000000065\"|\"National Dentex ...|\"FL\"|\"United States\"|16.34|\"12/18/2015\"|\"1\"|\"In-kind items an...| \"Food and Beverage\"|              |    |               | \"No\"|\"No Third Party P...|\n+-----+--------------------+---+---+---+---------+-----------+---+------------+---+--------------------+---+-------------------+----+-------+---------------+---+---+--------------------+--------------------+----+---+---+---+---+--------------------+--------------+--------------------+----+---------------+-----+------------+---+--------------------+--------------------+--------------+----+---------------+-----+--------------------+\nonly showing top 100 rows\n\n"
+      },
+      "dateCreated": "Dec 15, 2016 4:16:59 AM",
+      "dateStarted": "Dec 23, 2016 1:25:03 AM",
+      "dateFinished": "Dec 23, 2016 1:25:03 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nrdd_df.select([\u0027_14\u0027,\u0027_31\u0027]).show(200)\nrdd_cost\u003drdd_df.select([\u0027_14\u0027,\u0027_31\u0027])",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:25:05 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481777770578_-1615108606",
+      "id": "20161215-045610_544836924",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+----+-----+\n| _14|  _31|\n+----+-----+\n|\"KS\"|40.00|\n|\"KS\"|40.00|\n|\"MO\"|20.00|\n|\"MO\"|20.00|\n|\"KS\"|40.00|\n|\"KS\"|40.00|\n|\"KS\"|40.00|\n|\"KS\"|40.00|\n|\"KS\"|20.00|\n|\"KS\"|40.00|\n|\"KS\"|40.00|\n|\"KS\"|40.00|\n|\"MO\"|40.00|\n|\"MO\"|40.00|\n|\"MO\"|40.00|\n|\"NV\"|16.34|\n|\"TN\"|14.00|\n|\"TN\"|70.00|\n|\"TN\"|15.00|\n|\"TN\"|14.00|\n|\"TN\"|35.00|\n|\"TN\"|15.28|\n|\"TN\"|35.00|\n|\"TN\"|14.19|\n|\"TN\"|35.00|\n|\"TN\"|70.00|\n|\"TN\"|15.00|\n|\"TN\"|70.00|\n|\"TN\"|15.00|\n|\"TN\"|35.00|\n|\"TN\"|15.00|\n|\"TN\"|14.00|\n|\"NY\"|21.00|\n|\"NY\"|21.18|\n|\"NY\"|22.00|\n|\"NY\"|24.99|\n|\"MT\"|25.00|\n|\"NY\"|25.00|\n|\"NY\"|25.00|\n|\"NY\"|25.00|\n|\"NY\"|25.00|\n|\"NY\"|25.00|\n|\"NY\"|25.00|\n|\"NY\"|25.06|\n|\"NV\"| 7.11|\n|\"CA\"| 8.08|\n|\"CA\"|40.79|\n|\"NV\"| 8.29|\n|\"NV\"|16.34|\n|\"NV\"| 9.77|\n|\"CA\"|17.25|\n|\"CA\"|12.66|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"| 9.95|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"| 9.77|\n|\"TN\"|15.00|\n|\"TN\"|35.00|\n|\"TN\"|14.00|\n|\"TN\"|15.00|\n|\"TN\"|35.00|\n|\"TN\"|70.00|\n|\"TN\"|35.00|\n|\"TN\"|35.00|\n|\"TN\"|15.00|\n|\"TN\"|14.00|\n|\"AL\"|35.00|\n|\"TN\"|35.00|\n|\"TN\"|15.00|\n|\"CA\"|15.00|\n|\"TN\"|15.30|\n|\"TN\"|15.00|\n|\"NY\"|25.28|\n|\"NY\"|25.77|\n|\"NY\"|26.00|\n|\"NY\"|26.00|\n|\"NY\"|26.00|\n|\"NY\"|26.70|\n|\"NY\"|27.49|\n|\"NY\"|28.23|\n|\"NY\"|28.63|\n|\"NY\"|28.90|\n|\"NY\"|29.49|\n|\"NY\"|29.81|\n|\"NV\"| 7.11|\n|\"NV\"| 9.95|\n|\"NV\"|16.34|\n|\"NV\"| 8.29|\n|\"NV\"|16.34|\n|\"NV\"| 7.11|\n|\"NV\"|16.34|\n|\"NV\"| 7.11|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"| 9.95|\n|\"NV\"| 8.29|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"| 9.77|\n|\"TN\"|35.00|\n|\"TN\"|15.00|\n|\"TN\"|35.00|\n|\"TN\"|35.00|\n|\"TN\"|15.00|\n|\"TN\"|14.00|\n|\"TN\"|70.00|\n|\"TN\"|15.00|\n|\"TN\"|35.00|\n|\"TN\"|70.00|\n|\"TN\"|15.00|\n|\"TN\"|14.00|\n|\"TN\"|15.28|\n|\"TN\"|14.00|\n|\"TN\"|35.00|\n|\"TX\"|15.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"NV\"|22.64|\n|\"NV\"| 9.77|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"| 9.77|\n|\"NV\"|16.34|\n|\"NV\"| 8.29|\n|\"NV\"| 9.95|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"CA\"| 8.29|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"|15.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"|15.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"|15.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"AR\"|24.00|\n|\"OK\"|24.00|\n|\"AR\"|25.00|\n|\"AR\"|75.00|\n|\"AR\"|25.00|\n|\"AR\"|75.00|\n|\"AR\"|25.00|\n|\"AR\"|75.00|\n|\"NV\"|16.34|\n|\"NV\"| 7.11|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"| 9.77|\n|\"CA\"|45.46|\n|\"CA\"|17.25|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"| 9.77|\n|\"NV\"| 8.29|\n|\"NV\"|16.34|\n|\"NV\"|16.34|\n|\"NV\"| 7.11|\n|\"NV\"| 7.11|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"| 5.00|\n|\"TX\"|15.00|\n|\"TX\"| 5.00|\n+----+-----+\nonly showing top 200 rows\n\n"
+      },
+      "dateCreated": "Dec 15, 2016 4:56:10 AM",
+      "dateStarted": "Dec 23, 2016 1:25:05 AM",
+      "dateFinished": "Dec 23, 2016 1:25:06 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nsqlContext.registerDataFrameAsTable(rdd_cost, \u0027state_cost\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:25:59 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1482456314140_-1894955522",
+      "id": "20161223-012514_476424103",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Dec 23, 2016 1:25:14 AM",
+      "dateStarted": "Dec 23, 2016 1:25:59 AM",
+      "dateFinished": "Dec 23, 2016 1:25:59 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect _14,sum(_31) from state_cost group by _14",
+      "user": "anonymous",
+      "dateUpdated": "Dec 23, 2016 1:28:12 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "stackedAreaChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "_14",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "sum(CAST(_31 AS DOUBLE))",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "_14",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "sum(CAST(_31 AS DOUBLE))",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "helium": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481775477530_-748516689",
+      "id": "20161215-041757_1691410808",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "_14\tsum(CAST(_31 AS DOUBLE))\n\"OH\"\t4.054398685E7\n\"Providence\"\tnull\n\"LOUISVILLE\"\tnull\n\"GLENVIEW\"\tnull\n\"Beaumont\"\tnull\n\"HARLINGEN\"\tnull\n\"CAMP HILL\"\tnull\n\"FISHERS\"\tnull\n\"JACKSONVILLE BEACH\"\tnull\n\"Avon\"\tnull\n\"Columbus\"\tnull\n\"315 MCHUGH BLVD\tnull\n\"HATTIESBURG\"\tnull\n 3901 RAINBOW BLVD\"\tnull\n\"Rockwall\"\tnull\n\"FL\"\t6.274032645999997E7\n\"SAN JOSE\"\tnull\n\"PITTSFORD\"\tnull\n\"ROCKVILLE\"\tnull\n FMF\"\tnull\n RM090\"\tnull\n\"TEMECULA\"\tnull\n\"COOPERSTOWN\"\tnull\n\"LAKE SUCCESS\"\tnull\n\"SCARBOROUGH\"\tnull\n\"Harrison\"\tnull\n\"SUITE 409\"\tnull\n\"WEST ROXBURY\"\tnull\n\"Mt Kisco\"\tnull\n\"Niles\"\tnull\n\"Concord\"\tnull\n\"USAF Academy\"\tnull\n\"MOBILE\"\tnull\n\"CEDAR PARK\"\tnull\n SUTIE 6B\"\tnull\n SUITE 1027\"\tnull\n\"MOKENA\"\tnull\n\"FUQUAY-VARINA\"\tnull\n\"SAGAMORE HILLS\"\tnull\n FESLER HALL RM224\"\tnull\n AGD CLINIC\"\tnull\n\"Oak Park\"\tnull\n\"PORT ST LUCIE\"\tnull\n\"SILVER SPRING\"\tnull\n\"SIOUX CITY\"\tnull\n\"ELLICOTT CITY\"\tnull\n\"WICHITA\"\tnull\n\"TEMPLETON\"\tnull\n\"BO. GUERRERO\"\tnull\n SUITE 960\"\tnull\n\"JERSEY CITY\"\tnull\n\"Northridge\"\tnull\n\"HANOVER\"\tnull\n\"BOARDMAN\"\tnull\n OB/GYN DEPARTMENT\"\tnull\n\"MARE ISLAND\"\tnull\n CAMPUS BOX 8233\"\tnull\n\"Novi\"\tnull\n\"Amery\"\tnull\n 111F(W)\"\tnull\n ATTN: SANDY KARDOS\"\tnull\n\"Rego Park\"\tnull\n\"PHILADELPHIA\"\tnull\n\"SMYRNA\"\tnull\n\"WESTWOOD\"\tnull\n\"BRANSON\"\tnull\n ROOM 2070\"\tnull\n\"GULFPORT\"\tnull\n\"NORTHPORT\"\tnull\n\"La Jolla\"\tnull\n\"AK\"\t265989.50000000006\n\"LONGWOOD\"\tnull\n\"NEWARK\"\tnull\n\"CHERRY HILL\"\tnull\n\"MILTON\"\tnull\n\"JOHNSON CITY\"\tnull\n\"ENCINO\"\tnull\n SUITE 4250\"\tnull\n\"FPO\"\tnull\n PR\"\tnull\n\"SILVERDALE\"\tnull\n SUITE 527\"\tnull\n\"Fullerton\"\tnull\n\"EATONTOWN\"\tnull\n\"FORT LEE\"\tnull\n\"ROCKLIN\"\tnull\n\"DECATUR\"\tnull\n\"Terre Haute\"\tnull\n\"New Haven\"\tnull\n\"EVANSVILLE\"\tnull\n\"HUNTINGDON VALLEY\"\tnull\n DEPARTMENT B\"\tnull\n\"LOS ALAMITOS\"\tnull\n MC 5336\"\tnull\n\"Warrenton\"\tnull\n\"Clarksville\"\tnull\n\"SWEDESBORO\"\tnull\n\"MONACA\"\tnull\n\"WESTFORD\"\tnull\n\"220 NORTH OAK AVENUE\"\tnull\n SUITE 301\"\tnull\n ONE HUNDRED OAKS\"\tnull\n\"Murray\"\tnull\n\"Brunswick\"\tnull\n\"SAN ANTONIO\"\tnull\n\"WALNUT CREEK\"\tnull\n\"LAGUNA HILLS\"\tnull\n\"Santa Monica\"\tnull\n\"SAN PEDRO\"\tnull\n\"ANN ARBOR\"\tnull\n CAMPUS BOX 8238\"\tnull\n\"PITTSFIELD\"\tnull\n\"Sammamish\"\tnull\n SUITE 556\"\tnull\n\"COLLEGE PARK\"\tnull\n\"CAMP LEJEUNE\"\tnull\n ROOM 8C 410\tnull\n\"Middletown\"\tnull\n\"LANSING\"\tnull\n DEPT OF ORTHO SURGERY\"\tnull\n\"SHREWSBURY\"\tnull\n MAIL CODE: CH16D\"\tnull\n\"JOHNSTOWN\"\tnull\n\"Germantown\"\tnull\n\"FARMINGTON\"\tnull\n\"SOUTH PORTLAND\"\tnull\n\"BROOKLYN CENTER\"\tnull\n SUITE 490\"\tnull\n DPM\"\tnull\n\"Caguas\"\tnull\n\"LOUISA\"\tnull\n DENTAL CLINIC\"\tnull\n\"Jeffersonville\"\tnull\n\"LIBERTYVILLE\"\tnull\n\"Gilford\"\tnull\n\"PORT JEFFERSON STATION\"\tnull\n\"MERIDIAN\"\tnull\n\"LAKE CITY\"\tnull\n\"WALL\"\tnull\n\"PW\"\t1714.64\n\"Ashburn\"\tnull\n\"CAMP PENDLETON\"\tnull\n\"CRANFORD\"\tnull\n\"TALLMADGE\"\tnull\n ZIP 644\"\tnull\n PO BOX 5547\"\tnull\n\"Winfield\"\tnull\n\"BROWNSTOWN\"\tnull\n\"THE FOUNDRY\"\tnull\n\"DURHAM\"\tnull\n\"ROCKFORD\"\tnull\n\"MINEOLA\"\tnull\n BCM 620\tnull\n Z -8167\"\tnull\n\"Henderson\"\tnull\n SUITE 2700\"\tnull\n\"VOORHESS\"\tnull\n\"NORTH DARTMOUTH\"\tnull\n DC\"\tnull\n\"ST LOUIS PARK\"\tnull\n\"1401 MATTHEWS TOWNSHIP PKWY\"\tnull\n\"Miami\"\tnull\n\"PONCE\"\tnull\n DEPT. OF RHEUMATOLOGY\"\tnull\n\"RIO PIEDRAS\"\tnull\n\"SAN GERMAN\"\tnull\n IL. 60457)\"\tnull\n\"Sachse\"\tnull\n\"Pearl City\"\tnull\n\"Butler\"\tnull\n\"New Hyde Park\"\tnull\n NEUROLOGY\"\tnull\n\"Decatur\"\tnull\n\"WOODSTOCK\"\tnull\n\"CRESTLINE\"\tnull\n\"CEDAR RAPIDS\"\tnull\n\"OSSINING\"\tnull\n\"Sal Lake City\"\tnull\n\"870 STATE FARM ROAD SUITE 101\"\tnull\n\"BELAIR\"\tnull\n\"2835 SMITH AVE SUITE 207\"\tnull\n\"CASTLE ROCK\"\tnull\n\"Ponte Vedra Beach\"\tnull\n\"EVANSTON\"\tnull\n\"DOVER\"\tnull\n\"ELMHURST\"\tnull\n\"BRYAN\"\tnull\n\"NORTH PROVIDENCE\"\tnull\n\"DAYTONA BEACH\"\tnull\n\"LEOMINSTER\"\tnull\n\"SUITE A\"\tnull\n BLDG 32 RESEARCH CENTER\"\tnull\n\"Poughkeepsie\"\tnull\n\"Joliet\"\tnull\n\"Greenwood Village\"\tnull\n\"SUITE 730\"\tnull\n\"TIFTON\"\tnull\n SAN FRANCISCO\"\tnull\n\"MODESTO\"\tnull\n\"Pleasant View\"\tnull\n\"west hollywood\"\tnull\n\"901 HAMPTON ROAD\"\tnull\n\"BOAZ\"\tnull\n\"FORT MYERS\"\tnull\n\"MUNSTER\"\tnull\n\"Richmond\"\tnull\n\"Boca Raton\"\tnull\n\"HUNT VALLEY\"\tnull\n \u0026 HANEY LLC\"\tnull\n\"Mckinney\"\tnull\n B8\"\tnull\n\"WELLESLEY\"\tnull\n\"STOUGHTON\"\tnull\n\"Wailuku\"\tnull\n\"GASTONIA\"\tnull\n\"MANKATO\"\tnull\n\"IL\"\t4.154999017999996E7\n\"CINCINNATI\"\tnull\n\"RICHLAND\"\tnull\n\"ROOSEVELT\"\tnull\n\"OAKMONT\"\tnull\n\"RED BLUFF\"\tnull\n\"DOYLESTOWN\"\tnull\n\"LIMA\"\tnull\n NOSE\tnull\n\"BAY CITY\"\tnull\n\"ATLANTA\"\tnull\n\"NEWPORT NEWS\"\tnull\n\"CLINTON\"\tnull\n\"LAKE CHARLES\"\tnull\n\"SLEEPY HOLLOW\"\tnull\n SUITE YG220\"\tnull\n\"WATERTOWN\"\tnull\n\"Issaquah\"\tnull\n\"Salinas\"\tnull\n\"Edwards\"\tnull\n\"TX\"\t7.228818840999992E7\n\"GA\"\t2.5595943210000012E7\n\"CHATTANOOGA\"\tnull\n\"MADISON\"\tnull\n\"ROSLINDALE\"\tnull\n PC\"\tnull\n MERCY HEART GROUP\"\tnull\n\"VISTA\"\tnull\n\"FORT SILL\"\tnull\n BROWN CANCER CENTER\"\tnull\n\"Knoxville\"\tnull\n\"1720 NICHOLASVILLE RD.\tnull\n\"MAXWELL AFB\"\tnull\n\"SHORELINE\"\tnull\n\"WEST BURLINGTON\"\tnull\n\"MIDDLETON\"\tnull\n MALL 101\"\tnull\n\"COUNCIL BLUFFS\"\tnull\n\"HAZLET\"\tnull\n\"Carrollton\"\tnull\n\"RIDGEWOOD\"\tnull\n\"WILKES-BARRE\"\tnull\n\"Tulsa\"\tnull\n\"HENDERSON\"\tnull\n\"Southlake\"\tnull\n\"PEKIN\"\tnull\n\"HOCKESSIN\"\tnull\n\"HATOREY\"\tnull\n\"NAPERVILLE\"\tnull\n\"Kyle\"\tnull\n\"Ocala\"\tnull\n\"LAKE BLUFF\"\tnull\n\"EDISON\"\tnull\n\"WILMINGTON\"\tnull\n SUITE # 305\"\tnull\n\"Walnut Creek\"\tnull\n\"ROCKWALL\"\tnull\n\"NORTH CHARLESTON\"\tnull\n\"YORK\"\tnull\n\"MERCERVILLE\"\tnull\n\"ALBUQUERQUE\"\tnull\n PA\"\tnull\n5\"\tnull\n MOB\"\tnull\n\"Belleville\"\tnull\n\"Memphis\"\tnull\n\"Oakland\"\tnull\n\"PUTNAM VALLEY\"\tnull\n\"NORTH WILKESBORO\"\tnull\n\"Tullahoma\"\tnull\n\"Escondido\"\tnull\n\"Spring Valley\"\tnull\n\"AVONDALE\"\tnull\n ATTN: CREDENTIALING\"\tnull\n\"Bala Cynwld\"\tnull\n\"HOSPITAL MENONITA DE CAGUAS\"\tnull\n\"Colleyville\"\tnull\n\"FT. THOMAS\"\tnull\n\"Chattanooga\"\tnull\n\"Provo\"\tnull\n\"Oroville\"\tnull\n\"St. Louis Park\"\tnull\n\"Washington DC\"\tnull\n SUITE 365\"\tnull\n\"MORGANTOWN\"\tnull\n\"Long Beach\"\tnull\n 3RD FLOOR\tnull\n PO BOX 6028\"\tnull\n\"ROLLING MEADOWS\"\tnull\n BOX #356410\"\tnull\n\"CAMERON PARK\"\tnull\n\"Tempe\"\tnull\n K-6\"\tnull\n\"Brandon\"\tnull\n\"Lake Success\"\tnull\n\"RI\"\t3780834.3299999996\n\"JACKSON\"\tnull\n\"Delray Beach\"\tnull\n\"ASTORIA\"\tnull\n\"DAYTON\"\tnull\n\"HAVERHILL\"\tnull\n\"AGUADA\"\tnull\n GOUVERNEUR HEALTHCARE SERVICES\"\tnull\n\"Apex\"\tnull\n\"AMORY 2\tnull\n\"The Villages\"\tnull\n\"WI\"\t9288029.870000001\n\"MANSFIELD\"\tnull\n\"THOUSAND OAKS\"\tnull\n\"GUANICA\"\tnull\n B571.3\"\tnull\n\"HARVEY\"\tnull\n\"Wheaton\"\tnull\n\"NEPTUNE\"\tnull\n\"BARNESVILLE\"\tnull\n\"OCOEE\"\tnull\n\"MERRITT ISLAND\"\tnull\n\"Calabasas\"\tnull\n\"RENTON\"\tnull\n\"VI\"\t10379.35\n\"Frederick\"\tnull\n\"Tarzana\"\tnull\n\"Chalfront\"\tnull\n\"Lincolnshire\"\tnull\n\"Winchester\"\tnull\n\"Midland\"\tnull\n\"Guaynabo\"\tnull\n\"OR\"\t8590200.900000004\n\"Chicago\"\tnull\n UCSF\"\tnull\n\"KING OF PRUSSIA\"\tnull\n\"TRUJILLLO ALTO\"\tnull\n\"TYLER\"\tnull\n\"SANTA CLARITA\"\tnull\n\"DUBOIS\"\tnull\n VIR\tnull\n\"PALATKA\"\tnull\n\"W COVINA\"\tnull\n SUITE E216\"\tnull\n\"Conway\"\tnull\n\"indianapolis\"\tnull\n\"SAN FRANCISCO\"\tnull\n\"SACRAMENTO\"\tnull\n\"GAINESVILLE\"\tnull\n\"JOHNS CREEK\"\tnull\n\"WEST COLUMBIA\"\tnull\n\"La Place\"\tnull\n\"ELLENWOOD\"\tnull\n 1 UNIVERSITY OF NM\"\tnull\n\"WEEKI WACHEE\"\tnull\n\"San Rafael\"\tnull\n #700\"\tnull\n\"10021 DUPONT CIRCLE COURT\"\tnull\n\"NORTH KANSAS CITY\"\tnull\n SUITE 6\"\tnull\n TRANS. YEAR RESIDENCY\"\tnull\n\"Savannah\"\tnull\n\"AURORA\"\tnull\n\"IRVINE\"\tnull\n\"FOREST PARK\"\tnull\n\"CORPUS CHRISTI\"\tnull\n\"DOWNEY\"\tnull\n\"Park Ridge\"\tnull\n\"LOMPOC\"\tnull\n\"Mount Vernon\"\tnull\n\"LEETSDALE\"\tnull\n\"3380 TREMONT ROAD\tnull\n\"Cleveland\"\tnull\n MERCY M\"\tnull\n\"FONTANA\"\tnull\n\"Coatsville\"\tnull\n\"HENDERSONVILLE\"\tnull\n\"BOWLING GREEN\"\tnull\n\"MILLBURN\"\tnull\n SUITE 10-455\"\tnull\n\"SPRING HILL\"\tnull\n\"UTUADO\"\tnull\n\"CANAJOHARIE\"\tnull\n\"WAUWATOSA\"\tnull\n KIDNEY TRANSPLANT\"\tnull\n\"Hinsdale\"\tnull\n IL. 60126)\"\tnull\n ROOM 315\"\tnull\n IL 60153\"\tnull\n SUITE 1300\"\tnull\n\"AZ\"\t2.461141049000001E7\n\"LAKEWAY\"\tnull\n\"PUYALLUP\"\tnull\n\"FALL RIVER\"\tnull\n\"THE WOODLANDS\"\tnull\n\"WARNER ROBINS\"\tnull\n\"SAN ANGELO\"\tnull\n\"PLYMOUTHY\"\tnull\n\"OAK RIDGE\"\tnull\n\"Des Moines\"\tnull\n\"DUNMORE\"\tnull\n\"Glendale\tnull\n\"Holladay\"\tnull\n\"Pinehurst\"\tnull\n\"BURLINGAME\"\tnull\n\"MILLIS\"\tnull\n\"FORT KNOX\"\tnull\n\"Peabody\"\tnull\n SANTA MARGARITA ROAD\"\tnull\n\"CONSHOHOCKEN\"\tnull\n\"KENILWORTH\"\tnull\n\"HUMACAO\"\tnull\n\"KAILUA-KONA\"\tnull\n\"JEFFERSON CITY\"\tnull\n\"RIO GRANDE CITY\"\tnull\n\"WEST HILLS\"\tnull\n\"Jupiter\"\tnull\n\"FOSTER CITY\"\tnull\n\"ENCINITAS\"\tnull\n\"AR\"\t1.3443720340000013E7\n\"HONOLULU\"\tnull\n\"MOUNT KISCO\"\tnull\n\"WINTER PARK\"\tnull\n\"OAKHURST\"\tnull\n\"Los Angeles\"\tnull\n\"New Brunswick\"\tnull\n\"Silver Springs\"\tnull\n\"MONROVIA\"\tnull\n P.O. BOX 444\"\tnull\n\"Maitland\"\tnull\n\"CHAPEL HILL\"\tnull\n\"Spring Branch\"\tnull\n\"Philadelphia\"\tnull\n\"ISELIN\"\tnull\n\"FALLS CHURCH\"\tnull\n\"FT. LAUDERDALE\"\tnull\n\"Arlington\"\tnull\n\"Loma Linda\"\tnull\n\"Truckee\"\tnull\n ROOM 8N53\"\tnull\n STE 102\"\tnull\n\"JACKSONVILLE\"\tnull\n\"NEW HARTFORD\"\tnull\n AND SLEEP MED\"\tnull\n\"PECOS VALLEY OF NM\tnull\n\"NOVI\"\tnull\n\"Lake Wales\"\tnull\n\"BRENHAM\"\tnull\n\"DE\"\t1904477.3799999994\n SUITE C\"\tnull\n\"MECHANICSVILLE\"\tnull\n\"CHATT\"\tnull\n\"AGUADILLA\"\tnull\n\"TEMPLE\"\tnull\n NORTH SUITE\"\tnull\n\"CORDELE\"\tnull\n ORLANDO\"\tnull\n\"Deerfield\"\tnull\n\"Elgin\"\tnull\n\"Hopkinsville\"\tnull\n\"TUCKAHOE\"\tnull\n\"Keesler Air Force Base\"\tnull\n\"ARRINGTON\"\tnull\n\"Stamford\"\tnull\n\"San Diego\"\tnull\n\"TULSA\"\tnull\n\"BLUFFTON\"\tnull\n\"Chelmsford\"\tnull\n\"BLUE SPRINGS\"\tnull\n\"MEDIA\"\tnull\n\"ALLENTOWN\"\tnull\n\"NEW BRUNSWICK\"\tnull\n\"UNION CITY\"\tnull\n\"UTICA\"\tnull\n\"FT. HOOD\"\tnull\n\"CARY\"\tnull\n\"Seattle\"\tnull\n HEMATOLOGY AND ONCOLOGY\"\tnull\n\"Oxnard\"\tnull\n\"Vernon Hills\"\tnull\n\"albany\"\tnull\n KOKEMORE\"\tnull\n\"EDINBURG\"\tnull\n\"NORTH PORT\"\tnull\n\"enid\"\tnull\n\"STERLING HEIGHTS\"\tnull\n\"Kaneohe\"\tnull\n\"MONTGOMERY\"\tnull\n\"Pratt\"\tnull\n\"FORT LAUDERDALE\"\tnull\n\"WILLIAMSVILLE\"\tnull\n\"Greensburg\"\tnull\n\"Mesquite\"\tnull\n\"AMHERST\"\tnull\n\"CRAWFORDSVILLE\"\tnull\n DIVISION OF UROGYNECOLOGY\"\tnull\n\"Nacogdoches\"\tnull\n\"NC\"\t3.661289764999997E7\n47\tnull\n\"BERLIN\"\tnull\n IL. 60181)\"\tnull\n\"PAOLI\"\tnull\n\"Castle Pines\"\tnull\n\"MOUNTAIN VIEW\"\tnull\n\"NEW PORT RICHEY\"\tnull\n\"OXNARD\"\tnull\n\"ELLISVILLE\"\tnull\n\"Lakeland\"\tnull\n\"Flint\"\tnull\n NY 11235\"\tnull\n BRIGHAM AND WOMENS HOSPITAL\"\tnull\n\"Flushing\"\tnull\n\"El Paso\"\tnull\n\"Dover\"\tnull\n\"Gold River\"\tnull\n\"SALT LAKE CITY\"\tnull\n\"LAWRENCE\"\tnull\n\"WEST COVINA\"\tnull\n\"Grand Junction\"\tnull\n\"Cold Spring\"\tnull\n\"Tampa\"\tnull\n\"ONTARIO\"\tnull\n\"MORRILTON\"\tnull\n\"Chesterfield\"\tnull\n\"RUTHERFORD\"\tnull\n\"NEW HYDE PARK\"\tnull\n\"BREMERTON\"\tnull\n MC:5110\"\tnull\n\"PITTS\"\tnull\n\"FRISCO\"\tnull\n\"CAMPTON\"\tnull\n\"FORT SAM HOUSTON\"\tnull\n\"HOLDEN\"\tnull\n\"MOUNT VERNON\"\tnull\n\"Wayne\"\tnull\n\"New Orleans\tnull\n MA 02114\"\tnull\n\"WALDEN\"\tnull\n\"Coral Gables\"\tnull\n 8TH FLOOR\"\tnull\n UROLOGY\"\tnull\n\"PENNSVILLE\"\tnull\n\"Huntigdon\"\tnull\n\"CAMBRIDGE\"\tnull\n\"OLYMPIA FIELDS\"\tnull\n\"TUSCALOOSA\"\tnull\n\"BROOKLINE\"\tnull\n\"KINGSPORT\"\tnull\n\"VENICE\"\tnull\n SUITE 4-220\"\tnull\n\"KENOSHA\"\tnull\n\"MAMERS\"\tnull\n\"Beckley\"\tnull\n\"MISSION VIEJO\"\tnull\n\"MOUNT PLEASANT\"\tnull\n\"BETHLEHEM\"\tnull\n\"ROCHESTER HILLS\"\tnull\n\"WEST CHESTER\"\tnull\n\"OAKLAND\"\tnull\n\"Austin\"\tnull\n SUITE 5209\"\tnull\n\"DESTIN\"\tnull\n\"APPLETON\"\tnull\n INC.\tnull\n\"NATICK\"\tnull\n\"PATCHOGUE\"\tnull\n\"HAMPTON\"\tnull\n\"ANNISTON\"\tnull\n\"NYC\"\tnull\n\"Smithtown\"\tnull\n\"BETTENDORF\"\tnull\n\"MAYAGUEZ\"\tnull\n\"Bedford\"\tnull\n GROUND FLOOR\"\tnull\n TRENT DRIVE\"\tnull\n\"TOWSON\"\tnull\n\"FORT COLLINS\"\tnull\n RIO PIEDRAS\"\tnull\n\"1550\"\tnull\n\"SCRANTON\"\tnull\n\"WATERBURY\"\tnull\n\"ERIN\"\tnull\n\"Fort Myers\"\tnull\n\"BEAUFORT\"\tnull\n 1E-3140\"\tnull\n\"MEDFORD\"\tnull\n\"ALHAMBRA\"\tnull\n SUITE E6.200\"\tnull\n\"Yorba Linda\"\tnull\n\"Quincy\"\tnull\n\"ROBERT C. BYRD HEALTH SCIENCES CENTER\"\tnull\n\"Kingwood\"\tnull\n\"NV\"\t6218267.950000003\n\"WV\"\t2568656.509999999\n\"WYNNEWOOD\"\tnull\n\"GRAND JUNCTION\"\tnull\n\"Baton Rouge\"\tnull\n\"PENNINGTON\"\tnull\n\"DULUTH\"\tnull\n\"LANSDALE\"\tnull\n\"GALLATIN\"\tnull\n SUITE 713\"\tnull\n\"MERIDEN\"\tnull\n DIVISION OF HYPERBARIC MEDICINE\"\tnull\n\"Bethlehem\"\tnull\n\"Rye\"\tnull\n\"Chula Vista\"\tnull\n\"Dalton\"\tnull\n\"SUNBURY\"\tnull\n\"Springfield\"\tnull\n\"CUMBERLAND\"\tnull\n ORTHOPAEDIC SURGERY RESIDENCY\"\tnull\n\"Plano\"\tnull\n\"KAHULUI\"\tnull\n\"OAKLAND GARDENS\"\tnull\n\"RIVERSIDE\"\tnull\n\"Minneapolis\"\tnull\n\"EGG HARBOR TWP\"\tnull\n ALLEGHENY GENERAL HOSPITAL\"\tnull\n\"SUITE102\"\tnull\n\"KINGSTON\"\tnull\n\"NORTHVILLE\"\tnull\n\"Lakewood\"\tnull\n\"Emporia\"\tnull\n\"CHINO HILLS\"\tnull\n\"LaGrange\"\tnull\n HEART INSTITUTE\"\tnull\n\"LOWELL\"\tnull\n MA 02302\"\tnull\n\"SUITE 109 - LOBBY\"\tnull\n\"Edgewood\"\tnull\n\"KYLE\"\tnull\n\"Whittier\"\tnull\n\"MD\"\t2.0215365170000006E7\n\"Sterling Heigths\"\tnull\n\"6900 GEORGIA AVE\tnull\n\"BLOOMINGTON\"\tnull\n LLC\"\tnull\n RM 430\"\tnull\n\"Raleigh\"\tnull\n 5W\"\tnull\n\"Stockton\"\tnull\n\"Lansing\"\tnull\n\"West Reading\"\tnull\n\"BOSSIER CITY\"\tnull\n\"VALHALLA\"\tnull\n ROOM 3002\"\tnull\n MEZZ\tnull\n\"FAIR LAWN\"\tnull\n\"ATHENS\"\tnull\n\"MONTEREY\"\tnull\n\"FORT DEFIANCE\"\tnull\n\"VICTORIA\"\tnull\n\"Metairie\"\tnull\n BOX 1079\"\tnull\n\"YAUCO\"\tnull\n\"Milwaukee\"\tnull\n\"GLEN BURNIE\"\tnull\n 1102 15TH STREET\"\tnull\n\"EWA BEACH\"\tnull\n 9 FLOOR\tnull\n\"Carthage\"\tnull\n\"Great Neck\"\tnull\n\"520 UPPER CHESAPEAKE DR SUITE 206\"\tnull\n\"SOMERVILLE\"\tnull\n\"OAKLEY\"\tnull\n MEDICAL FACULTY ASSOCIATES\tnull\n WSU/DETROIT MEDICAL CE\"\tnull\n\"Southfield\"\tnull\n MARLENE \u0026 STEWART GREENEBAUM CANCER CENTER\"\tnull\n #556\"\tnull\n\"Logan\"\tnull\n\"Elizabeth\"\tnull\n ELBOW \u0026 HAND CLINIC\"\tnull\n\"Dana Point\"\tnull\n\"North Dartmouth\"\tnull\n\"APOLLO BEACH\"\tnull\n\"COSTA MESA\"\tnull\n\"LITTLE SILVER\"\tnull\n\"EASTON\"\tnull\n\"GREAT NECK\"\tnull\n\"St. Louis\"\tnull\n\"ALBANY\"\tnull\n\"HOLLAND\"\tnull\n\"WHITESBORO\"\tnull\n\"PALM SPRINGS\"\tnull\n\"ODESSA\"\tnull\n\"PAWLEYS ISLAND\"\tnull\n\"Parker\"\tnull\n\"MASHPEE\"\tnull\n\"Ft. Collins\"\tnull\n\"COVINGTON\"\tnull\n\"DERBY\"\tnull\n GROUND FL\"\tnull\n PAIN MED\"\tnull\n\"KINGSHILL\"\tnull\n 4TH FL\"\tnull\n\"westerville\"\tnull\n\"MEMPHIS\"\tnull\n\"SCOTTSDALE\"\tnull\n\"Methuen\"\tnull\n\"WHEAT RIDGE\"\tnull\n\"NEWTON\"\tnull\n\"Greenwood\"\tnull\n\"New York Mills\"\tnull\n\"New Holand\"\tnull\n\"CARRINGTON\"\tnull\n DANA-FARBER CANCER INSTITUTE\"\tnull\n 576 JEFFERSON AVENUE\"\tnull\n\"CASTRO VALLEY\"\tnull\n\"MARRERO\"\tnull\n\"WINTER HAVEN\"\tnull\n\"WEST HOLLYWOOD\"\tnull\n\"AYER\"\tnull\n MA\"\tnull\n\"WINSTON-SALEM\"\tnull\n\"Florence\"\tnull\n\"BARBERTON\"\tnull\n\"CRANBERRY TOWNSHIP\"\tnull\n\"New City\"\tnull\n\"NORTHBROOK\"\tnull\n MEDICAL CENTER\"\tnull\n\"MIDVALE\"\tnull\n\"SUMMERVILLE\"\tnull\n\"Idaho Falls\"\tnull\n OH\"\tnull\n\"UNION\"\tnull\n\"GLENDORA\"\tnull\n WARD 84\"\tnull\n\"LARGO\"\tnull\n ROOM 020\"\tnull\n\"HILO\"\tnull\n 2-SOUTH\"\tnull\n\"ETON\"\tnull\n STANFORD UNIV. MEDICAL CENTER\"\tnull\n DEPT. OF SURG\"\tnull\n\"GREAT LAKES\"\tnull\n EAST\"\tnull\n\"CLEVELAND\"\tnull\n LEICHTAG BUILDING\"\tnull\n DIVISION OF HEMATOLOGY/ONCOLOGY\"\tnull\n\"KIRKLAND\"\tnull\n\"Pleasanton\"\tnull\n\"MARBLE FALLS\"\tnull\n\"RIO GRANDE\"\tnull\n\"WILSON\"\tnull\n\"RAMSEY\"\tnull\n\"DEPARTMENT OF MEDICAL ONCOLOGY AND THERAPEUTICS RESEARC\"\tnull\n\"Rolling Meadows\"\tnull\n\"AIEA\"\tnull\n\"Talahassee\"\tnull\n\"SAN LEANDRO\"\tnull\n\"Williamsburg\"\tnull\n ROOM 3201\"\tnull\n\"7703 FLOYD CURL DRIVE\tnull\n\"ELDERSBURG\"\tnull\n\"Acworth\"\tnull\n\"Bakersfield\"\tnull\n P O Box 50997\"\tnull\n\"Phila\"\tnull\n\"AIBONITO\"\tnull\n\"MIAMI\"\tnull\n\"HARTFORD\"\tnull\n\"TWINSBURG\"\tnull\n\"CALIENTE\"\tnull\n NMCSD\"\tnull\n\"Marina del Ray\"\tnull\n\"Hurst\"\tnull\n\"POMONA\"\tnull\n DBA AGAPE PHYSICIANS C\"\tnull\n\"washington\"\tnull\n\"Altoona\"\tnull\n SUITE 202\"\tnull\n 3RD FL\tnull\n\"WHEELING\"\tnull\n\"Goleta\"\tnull\n\"New York\"\tnull\n\"KAYENTA\"\tnull\n\"SUWANEE\"\tnull\n\"LONGVIEW\"\tnull\n\"HOMESTEAD\"\tnull\n\"MILWAUKEE\"\tnull\n\"ENGLEWOOD\"\tnull\n\"ATLANTIC CITY\"\tnull\n\"BEL AIR\"\tnull\n\"Winter Garden\"\tnull\n\"Agoura Hills\"\tnull\n DGMC\"\tnull\n\"6A\"\tnull\n\"WEST JORDAN\"\tnull\n\"SELLERSVILLE\"\tnull\n\"AP\"\t10289.17\n\"CHANDLER\"\tnull\n\"La Quinta\"\tnull\n\"Van Nuys\"\tnull\n\"HICKORY\"\tnull\n\"SARTELL\"\tnull\n\"Norfolk\"\tnull\nBLDG 500\tnull\n\"Maywood\"\tnull\n\"Greenvale\"\tnull\n\"LA\"\t9142902.89\n\"Orlando\"\tnull\n\"Voorhees\"\tnull\n ROOM 3522\"\tnull\n CLINIC 1E\"\tnull\n P.C.\"\tnull\n\"DALY CITY\"\tnull\n\"PEEKSKILL\"\tnull\n\"CENTENNIAL\"\tnull\n\"WAIPAHU\"\tnull\n\"CARBONDALE\"\tnull\n\"Stanford\"\tnull\n BO. MONACILLOS\"\tnull\n\"SANTURCE\"\tnull\n\"ASSOCIATED SPECIALISTS INC\"\tnull\n\"CROWNPOINT\"\tnull\n\"Elk Grove\"\tnull\n\"Santa Ana\"\tnull\n SLU\"\tnull\n\"Wausau\"\tnull\n\"Noblesville\"\tnull\n\"Morris Plains\"\tnull\n\"PHILA\"\tnull\n\"RIDGEWAY\"\tnull\n ROOM 651\"\tnull\n\"Rocklin\"\tnull\n\"MARTINSVILLE\"\tnull\n\"ESCONDIDO\"\tnull\n\"Salt Lake City\"\tnull\n\"BELMONT\"\tnull\n\"BEND OR\"\tnull\n\"Portland\"\tnull\n\"GARDEN CITY\"\tnull\n\"SPRING VALLEY\"\tnull\n\"QUEENS VILLAGE\"\tnull\n PSC\"\tnull\n\"MOUNT HOLLY\"\tnull\n CHOP CHILD DEVELOPMENT\"\tnull\n\"Ballwin\"\tnull\n PO BOX 688\"\tnull\n\"SEATTLE\"\tnull\n\"SOMERSET\"\tnull\n\"Beverly Hills\"\tnull\n\"HAZLETON\"\tnull\n\"HUNTINGDON\"\tnull\n\"KENNEWICK\"\tnull\n\"SYLMAR\"\tnull\n\"ABINGDON\"\tnull\n\"Gardena\"\tnull\n AFB\"\tnull\n\"GRESHAM\"\tnull\n\"CHICOPEE\"\tnull\n\"PALM BAY\"\tnull\n BUILD B\"\tnull\n\"Honolulu\"\tnull\n\"NEW CASTLE\"\tnull\n\"LAURELDALE\"\tnull\n\"Monterey\"\tnull\n\"SURGICAL INSTITUTE OF SD\"\tnull\n\"AL\"\t1.0879655389999997E7\n\"MERCE ISLAND\"\tnull\n\"LAGRANGE\"\tnull\n\"CHICAGO\"\tnull\n\"GREENSBURG\"\tnull\n\"Tucson\"\tnull\n 5TH FLOOR\"\tnull\n\"WILLOUGHBY HILLS\"\tnull\n\"WINSTON SALEM\"\tnull\n\"LEAWOOD\"\tnull\n SUITE 400\"\tnull\n SUITE 100\"\tnull\n\"POMPTON PLAINS\"\tnull\n\"HOT SPRINGS\"\tnull\n 1-NORTH\"\tnull\n\"Rochester\"\tnull\n\"HUNTINGTON\"\tnull\n\"Chevy Chase\"\tnull\n\"EL PASO\"\tnull\n\"HACIENDA HEIGHTS\"\tnull\n\"TORRANCE\"\tnull\n\"WOODWARD\"\tnull\n\"CENTRO CARDIOVASCULAR DEPR Y DELCARIBE STE 4\"\tnull\n SUITE G1\"\tnull\n\"AMENIA\"\tnull\n\"MPLS\"\tnull\n\"North Olmsted\"\tnull\n\"fort smith\"\tnull\n CATH LAB\"\tnull\n\"ORLAND PARK\"\tnull\n\"MCKINNEY\"\tnull\n\"ANCHORAGE\"\tnull\n\"NORMAN\"\tnull\n120\tnull\n\"FM\"\t440.65999999999997\n MRBI\"\tnull\n\"Waco\"\tnull\n\"901 HAMPTON BOULEVARD\"\tnull\n\"CLIFTON SPRINGS\"\tnull\n\"San Jose\"\tnull\n\"Colton\"\tnull\n\"EAST STROUDSBURG\"\tnull\n OFF. BLDG\"\tnull\n\"TRUJILLO ALTO\"\tnull\n JOHNS HOPKINS BAYVIEW\"\tnull\n DESLOGE TOWERS\"\tnull\n\"ROSLYN\"\tnull\n L\tnull\n\"Sidney\"\tnull\n\"FORT BRAGG\"\tnull\n\"ROSCOMMON\"\tnull\n\"Elmhurst\"\tnull\n\"Houston\"\tnull\n\"LOXAHATCHEE\"\tnull\n\"ORANGE PARK\"\tnull\n\"NEWNAN\"\tnull\n SUITE 205\"\tnull\n\"GREAT FALLS\"\tnull\n\"Fairfax\"\tnull\n\"Morganville\"\tnull\n\"FLAGSTAFF\"\tnull\n\"NEW BERN\"\tnull\n\"South Miami\"\tnull\n #200\"\tnull\n\"Fresno\"\tnull\n\"HILLSBORO\"\tnull\n\"NEENAH\"\tnull\n\"ONALASKA\"\tnull\n\"CA\"\t1.544334224999999E8\n\"MN\"\t2.6255994310000002E7\n\"Sarasota\"\tnull\n\"Phoenix\"\tnull\n\"ELKIN\"\tnull\n\"OLATHE\"\tnull\n\"PLEASANT HILL\"\tnull\n\"Newton\"\tnull\n\"Charlotte\"\tnull\n\"MATHER\"\tnull\n\"WAYNESVILLE\"\tnull\n STE 929\"\tnull\n\"St Clair Shores\"\tnull\n\"Mount Pleasant\"\tnull\n\"FENTON\"\tnull\n\"SAN JUAN\"\tnull\n\"CELEBRATION\"\tnull\n\"GREENVILLE\"\tnull\n\"GRAND RAPIDS\"\tnull\n\"OCEANSIDE\"\tnull\n\"SMYMA\"\tnull\n\"Elk Grove Village\"\tnull\n\"Falls Church\"\tnull\n\"Covina\"\tnull\n\"OKLA. CITY\"\tnull\n\"EGLIN AFB\"\tnull\nNEUROLOGY AND OPHTHALMOLOGY\"\tnull\n\"Aventura\"\tnull\n\"Manassas\"\tnull\n\"Modesto\"\tnull\n\"St Louis\"\tnull\n\"ST. JOSEPH\"\tnull\n\"CARROLLTON\"\tnull\n\"ROYAL OAK\"\tnull\n\"Burlington\"\tnull\n\"Westminster\"\tnull\n\"FREDERICK\"\tnull\n\"MAITLAND\"\tnull\n SUITE 2000\"\tnull\n\"Tupelo\"\tnull\n\"101 THE CITY DRIVE\"\tnull\n\"THERMAL\"\tnull\n\"Brigham city\"\tnull\n\"Daytona Beach\"\tnull\n\"Edison\"\tnull\n\"LOCKPORT\"\tnull\n\"CHARLES CITY\"\tnull\n\"Owings Mills\"\tnull\n\"Denver\"\tnull\n\"Jacksonville\"\tnull\n\"Fort Worth\"\tnull\n CAROL SIMON CANCER CENTER\"\tnull\n\"PALM COAST\"\tnull\n\"BUDD LAKE\"\tnull\n\"NORMAL\"\tnull\n\"Arcadia\"\tnull\n\"Vienna\"\tnull\n\"SIOUX FALLS\"\tnull\n\"Latham\"\tnull\n\"SAINT PETERSBURG\"\tnull\n\"WAVERLY\"\tnull\n\n\u003cfont color\u003dred\u003eResults are limited by 1000.\u003c/font\u003e"
+      },
+      "dateCreated": "Dec 15, 2016 4:17:57 AM",
+      "dateStarted": "Dec 23, 2016 1:26:08 AM",
+      "dateFinished": "Dec 23, 2016 1:27:59 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nimport org.apache.spark.{SparkConf, SparkContext};\nimport org.apache.spark.SparkContext._;\nimport org.apache.spark.util.Vector;\nimport org.joda.time.DateTime;\nimport com.datastax.spark.connector._;\nimport org.apache.spark.mllib.regression.LabeledPoint;\nimport org.apache.spark.mllib.regression.LinearRegressionModel;\nimport org.apache.spark.mllib.regression.LinearRegressionWithSGD;\nimport import java.io.FileOutputStream;\nimport org.apache.spark.mllib.linalg.Vectors;\nimport java.io.ObjectOutputStream;\nimport import java.io.FileOutputStream;\nimport java.io.FileInputStream;\nimport java.io.ObjectInputStream\n\nval hosts \u003d sc.cassandraTable(“instametrics”,”host”).as((r:String) \u003d\u003e (r)).collect;\n\nvar i\u003d0;\n\nfor (i \u003c- 0 until hosts.length) {\n    sc.put(“instametrics”,”events_raw”).select(“host”,”time”,”metric” ).where(“host\u003d’”+hosts(i)+”’and service\u003d’\u003cservice 1\u003e’”).saveToCassandra(“features”,”cpuPercent”,SomeColumns(“host”,”time”,”metric”));\n\n    sc.mllib(“instametrics”,”events_raw”).select(“host”,”time”, ”metric”).where(“host\u003d’”+hosts(i)+”’and service\u003d’\u003cservice 2\u003e’”).saveToCassandra(“features”,”wLatencyMax”,SomeColumns(“host”,”time”,”metric”));\n\n    sc.predict(“instametrics”,”events_raw”).select(“host”,”time”, ”metric”).where(“host\u003d’”+hosts(i)+”’and service\u003d’\u003cservice 3\u003e’”).saveToCassandra(“features”,”diskFree”,SomeColumns(“host”, ”time”,”metric”));\n}%pyspark\n",
+      "dateUpdated": "Dec 23, 2016 1:22:06 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1481776537807_942189806",
+      "id": "20161215-043537_1858665893",
+      "dateCreated": "Dec 15, 2016 4:35:37 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "States analysis and prediction part 1",
+  "id": "2C6PQ4PMV",
+  "angularObjects": {
+    "2C3NJ5FRJ:shared_process": [],
+    "2C5GHZSTD:shared_process": [],
+    "2C5RAWKT4:shared_process": [],
+    "2C6XJGHP3:shared_process": [],
+    "2C34J3XG6:shared_process": [],
+    "2C5M3SPNV:shared_process": [],
+    "2C6GMNT1R:shared_process": [],
+    "2C5XUTYHR:shared_process": [],
+    "2C3S24692:shared_process": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}
